@@ -1,36 +1,33 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# SettleIn
 
-## Getting Started
+Step-by-step checklists and community-tested tips for your first 30 days in a new city.
+Launch city: **Gurgaon**. Next: **Bangalore**.
 
-First, run the development server:
+## Problem
+People moving to a new Indian metro for work have to figure out dozens of setup tasks
+(flat, gas, Wi-Fi, house help, paperwork) on their own, without local friends to ask.
+The info is scattered across Reddit, WhatsApp groups and brokers.
 
+## Goal (v1)
+A newcomer gets a clear, phased checklist (before the move → first week → first month),
+with upvoted tips on each step, within 5 minutes of landing on the site.
+
+## Run it locally
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
+Open http://localhost:3000
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Where things live
+- `src/data/cities.ts` — all checklist content (phases → steps → tips). Edit this to add steps.
+- `src/components/Checklist.tsx` — the checklist UI, progress bar and upvotes.
+- `src/app/[city]/page.tsx` — one page per city.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## v0 limits (next steps)
+- Progress and upvotes are saved in your browser only. Next: a real database so upvotes are shared.
+- No "add a tip" form yet.
+- Seed tips need fact-checking before launch.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Deploy
+Import this repo on vercel.com → New Project. No settings needed.
